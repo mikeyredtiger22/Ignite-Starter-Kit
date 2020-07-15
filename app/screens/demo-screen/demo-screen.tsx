@@ -1,8 +1,7 @@
 import React, { FunctionComponent as Component } from "react"
 import { Image, ImageStyle, Platform, TextStyle, View, ViewStyle } from "react-native"
-import { useNavigation } from "@react-navigation/native"
 import { observer } from "mobx-react-lite"
-import { BulletItem, Button, Header, Text, Screen, Wallpaper } from "../../components"
+import { BulletItem, Button, Text, Screen, Wallpaper } from "../../components"
 import { color, spacing } from "../../theme"
 import { Api } from "../../services/api"
 import { save } from "../../utils/storage"
@@ -24,18 +23,6 @@ const DEMO_TEXT: TextStyle = {
   ...BOLD,
   fontSize: 13,
   letterSpacing: 2,
-}
-const HEADER: TextStyle = {
-  paddingTop: spacing[3],
-  paddingBottom: spacing[5] - 1,
-  paddingHorizontal: 0,
-}
-const HEADER_TITLE: TextStyle = {
-  ...BOLD,
-  fontSize: 12,
-  lineHeight: 15,
-  textAlign: "center",
-  letterSpacing: 1.5,
 }
 const TITLE: TextStyle = {
   ...BOLD,
@@ -78,9 +65,6 @@ const HINT: TextStyle = {
 }
 
 export const DemoScreen: Component = observer(function DemoScreen() {
-  const navigation = useNavigation()
-  const goBack = () => navigation.goBack()
-
   const demoReactotron = React.useMemo(
     () => async () => {
       console.tron.log("Your Friendly tron log message")

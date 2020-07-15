@@ -10,12 +10,16 @@ import { NavigationContainer, NavigationContainerRef } from "@react-navigation/n
 import { PrimaryNavigator } from "./primary-navigator"
 import { createDrawerNavigator } from "@react-navigation/drawer"
 import { DemoScreen } from "../screens"
+import { CustomDrawerContentComponent } from "../components"
 
 const Drawer = createDrawerNavigator()
 
 const RootStack = () => {
   return (
-    <Drawer.Navigator initialRouteName="primaryStack">
+    <Drawer.Navigator
+      initialRouteName="primaryStack"
+      drawerContent={CustomDrawerContentComponent}
+    >
       <Drawer.Screen name="primaryStack" component={PrimaryNavigator}/>
       <Drawer.Screen name="demo" component={DemoScreen}/>
     </Drawer.Navigator>
