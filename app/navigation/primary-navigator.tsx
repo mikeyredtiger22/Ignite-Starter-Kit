@@ -33,8 +33,11 @@ export function PrimaryNavigator() {
   return (
     <Stack.Navigator
       screenOptions={{
-        headerShown: false,
         gestureEnabled: true,
+        headerTintColor: 'white',
+        headerStyle: {
+          backgroundColor: '#341E3C'
+        },
       }}
     >
       <Stack.Screen name="welcome" component={WelcomeScreen} />
