@@ -17,11 +17,11 @@ const Drawer = createDrawerNavigator()
 const RootStack = () => {
   return (
     <Drawer.Navigator
-      initialRouteName="primaryStack"
+      initialRouteName="Main Screen"
       drawerContent={CustomDrawerContentComponent}
     >
-      <Drawer.Screen name="primaryStack" component={PrimaryNavigator}/>
-      <Drawer.Screen name="demo" component={DemoScreen}/>
+      <Drawer.Screen name="Main Screen" component={PrimaryNavigator}/>
+      <Drawer.Screen name="Demo" component={DemoScreen}/>
     </Drawer.Navigator>
   )
 }

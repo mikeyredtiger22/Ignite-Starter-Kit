@@ -22,8 +22,8 @@ import { WelcomeScreen, DemoScreen } from "../screens"
  *   https://reactnavigation.org/docs/typescript#type-checking-the-navigator
  */
 export type PrimaryParamList = {
-  welcome: undefined
-  demo: undefined
+  Welcome: undefined
+  Demo: undefined
 }
 
 // Documentation: https://github.com/software-mansion/react-native-screens/tree/master/native-stack
@@ -38,10 +38,11 @@ export function PrimaryNavigator() {
         headerStyle: {
           backgroundColor: '#341E3C'
         },
+        headerShown: true
       }}
     >
-      <Stack.Screen name="welcome" component={WelcomeScreen} />
-      <Stack.Screen name="demo" component={DemoScreen} />
+      <Stack.Screen name="Welcome" component={WelcomeScreen} />
+      <Stack.Screen name="Demo" component={DemoScreen} />
     </Stack.Navigator>
   )
 }

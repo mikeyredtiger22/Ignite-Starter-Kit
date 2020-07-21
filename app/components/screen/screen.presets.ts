@@ -1,6 +1,6 @@
 import { ViewStyle } from "react-native"
 import { isNil } from "ramda"
-import { color } from "../../theme"
+import { color, spacing } from "../../theme"
 
 /**
  * All screen keyboard offsets.
@@ -43,6 +43,7 @@ export const presets = {
    */
   scroll: {
     outer: {
+      paddingTop: spacing[2],
       backgroundColor: color.background,
       flex: 1,
       height: "100%",

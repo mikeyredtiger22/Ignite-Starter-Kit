@@ -4,12 +4,11 @@ import { useNavigation } from "@react-navigation/native"
 import { observer } from "mobx-react-lite"
 import { Button, Header, Screen, Text, Wallpaper } from "../../components"
 import { color, spacing, typography } from "../../theme"
-const bowserLogo = require("./bowser.png")
+const tscLogo = require("./3scLogo.jpg")
 
 const FULL: ViewStyle = { flex: 1 }
 const CONTAINER: ViewStyle = {
-  backgroundColor: color.transparent,
-  paddingHorizontal: spacing[4],
+  backgroundColor: color.transparent
 }
 const TEXT: TextStyle = {
   color: color.palette.white,
@@ -47,6 +46,7 @@ const ALMOST: TextStyle = {
   fontStyle: "italic",
 }
 const BOWSER: ImageStyle = {
+  height: 350,
   alignSelf: "center",
   marginVertical: spacing[5],
   maxWidth: "100%",
@@ -57,6 +57,7 @@ const CONTENT: TextStyle = {
   fontSize: 15,
   lineHeight: 22,
   marginBottom: spacing[5],
+  paddingHorizontal: spacing[4],
 }
 const CONTINUE: ViewStyle = {
   paddingVertical: spacing[4],
@@ -77,23 +78,22 @@ const FOOTER_CONTENT: ViewStyle = {
 
 export const WelcomeScreen: Component = observer(function WelcomeScreen() {
   const navigation = useNavigation()
-  const nextScreen = () => navigation.navigate("demo")
+  const nextScreen = () => navigation.navigate("Demo")
 
   return (
     <View testID="WelcomeScreen" style={FULL}>
       <Wallpaper />
       <Screen style={CONTAINER} preset="scroll" backgroundColor={color.transparent}>
-        <Header headerTx="welcomeScreen.poweredBy" style={HEADER} titleStyle={HEADER_TITLE} />
+        <Header headerText="POWERED BY IGNITE-BOWSER" style={HEADER} titleStyle={HEADER_TITLE} />
         <Text style={TITLE_WRAPPER}>
-          <Text style={TITLE} text="Your new app, " />
-          <Text style={ALMOST} text="almost" />
+          <Text style={TITLE} text="3 SIDED CUBE " />
+          <Text style={ALMOST} text="Starter App" />
           <Text style={TITLE} text="!" />
         </Text>
-        <Text style={TITLE} preset="header" tx="welcomeScreen.readyForLaunch" />
-        <Image source={bowserLogo} style={BOWSER} />
+        <Image source={tscLogo} style={BOWSER} />
         <Text style={CONTENT}>
-          This probably isn't what your app is going to look like. Unless your designer handed you
-          this screen and, in that case, congrats! You're ready to ship.
+          3 SIDED CUBE Starter app. Uses the Ignite - Bowser boilerplate to get up and running with
+          the latest React Native technologies already preconfigured.
         </Text>
         <Text style={CONTENT}>
           For everyone else, this is where you'll see a live preview of your fully functioning app

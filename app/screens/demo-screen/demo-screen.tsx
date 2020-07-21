@@ -1,5 +1,5 @@
 import React, { FunctionComponent as Component } from "react"
-import { Image, ImageStyle, Platform, TextStyle, View, ViewStyle } from "react-native"
+import { Image, ImageStyle, Platform, SafeAreaView, TextStyle, View, ViewStyle } from "react-native"
 import { observer } from "mobx-react-lite"
 import { BulletItem, Button, Text, Screen, Wallpaper } from "../../components"
 import { color, spacing } from "../../theme"
@@ -109,25 +109,32 @@ export const DemoScreen: Component = observer(function DemoScreen() {
     <View testID="DemoScreen" style={FULL}>
       <Wallpaper />
       <Screen style={CONTAINER} preset="scroll" backgroundColor={color.transparent}>
-        <Text style={TITLE} preset="header" tx="demoScreen.title" />
-        <Text style={TAGLINE} tx="demoScreen.tagLine" />
-        <BulletItem text="Load up Reactotron!  You can inspect your app, view the events, interact, and so much more!" />
-        <BulletItem text="Integrated here, Navigation with State, TypeScript, Storybook, Solidarity, and i18n." />
-        <View>
-          <Button
-            style={DEMO}
-            textStyle={DEMO_TEXT}
-            tx="demoScreen.reactotron"
-            onPress={demoReactotron}
-          />
-          <Text style={HINT} tx={`demoScreen.${Platform.OS}ReactotronHint`} />
-        </View>
-        <Image source={logoIgnite} style={IGNITE} />
-        <View style={LOVE_WRAPPER}>
-          <Text style={LOVE} text="Made with" />
-          <Image source={heart} style={HEART} />
-          <Text style={LOVE} text="by Infinite Red" />
-        </View>
+        <SafeAreaView>
+          <Text style={TITLE} preset="header" tx="demoScreen.title" />
+          <Text style={TAGLINE} tx="demoScreen.tagLine" />
+          <BulletItem text="TypeScript - Type Safety" />
+          <BulletItem text="Reactotron - Debugging" />
+          <BulletItem text="React Navigation - Navigation" />
+          <BulletItem text="Mobx State Tree - Local State" />
+          <BulletItem text="Detox - e2e testing" />
+          <BulletItem text="Storybook - Component Library & Testing" />
+          <BulletItem text="Expo - Fast app prototyping" />
+          <View>
+            <Button
+              style={DEMO}
+              textStyle={DEMO_TEXT}
+              tx="demoScreen.reactotron"
+              onPress={demoReactotron}
+            />
+            <Text style={HINT} tx={`demoScreen.${Platform.OS}ReactotronHint`} />
+          </View>
+          <Image source={logoIgnite} style={IGNITE} />
+          <View style={LOVE_WRAPPER}>
+            <Text style={LOVE} text="Made with" />
+            <Image source={heart} style={HEART} />
+            <Text style={LOVE} text="by Infinite Red" />
+          </View>
+        </SafeAreaView>
       </Screen>
     </View>
   )
